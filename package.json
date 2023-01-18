@@ -1,0 +1,53 @@
+{
+  "name": "tasktracker",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "codegen": "graphql-codegen --watch"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.7.3",
+    "flowbite": "^1.6.2",
+    "flowbite-react": "^0.3.7",
+    "graphql": "^16.6.0",
+    "graphql-tag": "^2.12.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.5"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^2.16.4",
+    "@graphql-codegen/typescript-operations": "^2.5.12",
+    "@graphql-codegen/typescript-react-apollo": "^3.3.7",
+    "@graphql-codegen/typescript-resolvers": "^2.7.11",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@types/babel__core": "^7.1.20",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.47.1",
+    "@vitejs/plugin-react": "^3.0.0",
+    "autoprefixer": "^10.4.13",
+    "eslint": "^8.29.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "jsdom": "^20.0.3",
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.1",
+    "tailwindcss": "^3.2.4",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.0",
+    "vite-plugin-mkcert": "^1.11.0",
+    "vitest": "^0.25.7"
+  }
+}

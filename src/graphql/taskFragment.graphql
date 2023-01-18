@@ -1,0 +1,11 @@
+fragment TaskFragment on Task {
+  id
+  name
+  status
+  description
+  assignee {
+    id
+    name
+    email
+  }
+}

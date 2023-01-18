@@ -1,0 +1,31 @@
+fragment CurrentUserFragment on User {
+  id
+  name
+  email
+  projects {
+    nodes {
+      id
+      name
+      description
+      tasks {
+        nodes {
+          ...TaskFragment
+        }
+        pageInfo {
+          endCursor
+        }
+      }
+    }
+    pageInfo {
+      endCursor
+    }
+  }
+  assignedTasks {
+    nodes {
+      ...TaskFragment
+    }
+    pageInfo {
+      endCursor
+    }
+  }
+}

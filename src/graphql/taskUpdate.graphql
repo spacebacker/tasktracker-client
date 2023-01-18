@@ -1,0 +1,5 @@
+mutation TaskUpdate($id: ID!, $taskData: TaskInput!) {
+  taskUpdate(id: $id, taskData: $taskData) {
+    ...TaskFragment
+  }
+}

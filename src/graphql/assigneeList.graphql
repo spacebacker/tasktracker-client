@@ -1,0 +1,9 @@
+query AssigneeList {
+  assigneeList {
+    nodes {
+      id
+      name
+      email
+    }
+  }
+}

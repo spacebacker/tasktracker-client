@@ -1,0 +1,12 @@
+mutation ProjectCreate($name: String!, $description: String) {
+  projectCreate(name: $name, description: $description) {
+    id
+    name
+    description
+    tasks {
+      nodes {
+        ...TaskFragment
+      }
+    }
+  }
+}

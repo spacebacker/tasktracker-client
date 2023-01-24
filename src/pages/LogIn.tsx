@@ -1,22 +1,22 @@
 import { useContext, useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import { useAuthSignInMutation, User } from '../generated/graphql';
+import { useAuthLogInMutation, User } from '../generated/graphql';
 import { CurrentUserContext } from '../providers/CurrentUserProvider';
 import { Card, Button, TextInput, Label } from 'flowbite-react';
 
-function SignIn() {
+function LogIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const [authSignIn, { error }] = useAuthSignInMutation();
+  const [authLogIn, { error }] = useAuthLogInMutation();
   const { setCurrentUser } = useContext(CurrentUserContext);
 
   const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
-      const { data } = await authSignIn({ variables: { email, password } });
-      setCurrentUser(data?.authSignIn as User);
+      const { data } = await authLogIn({ variables: { email, password } });
+      setCurrentUser(data?.authLogIn as User);
 
       <Navigate to="/" />;
     } catch (error) {
@@ -67,4 +67,4 @@ function SignIn() {
   );
 }
 
-export default SignIn;
+export default LogIn;

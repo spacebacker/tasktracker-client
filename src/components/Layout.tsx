@@ -1,23 +1,23 @@
 import { Navbar, Dropdown, Avatar } from 'flowbite-react';
 import { useContext } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
-import { useAuthSignOutMutation } from '../generated/graphql';
+import { useAuthLogOutMutation } from '../generated/graphql';
 import { CurrentUserContext } from '../providers/CurrentUserProvider';
 import { apolloClient } from '../services/ApolloClient';
 
 function Layout() {
   const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
-  const [signOutMutation] = useAuthSignOutMutation();
+  const [logOutMutation] = useAuthLogOutMutation();
 
   const navigate = useNavigate();
   const toProjects = () => navigate('/');
   const toTasks = () => navigate('/tasks');
 
-  const handleSignOut = async () => {
-    await signOutMutation();
+  const handleLogOut = async () => {
+    await logOutMutation();
     setCurrentUser(null);
     apolloClient.resetStore();
-    <Navigate to="/signin" />;
+    <Navigate to="/logIn" />;
   };
 
   return (
@@ -53,7 +53,7 @@ function Layout() {
             <Dropdown.Item onClick={toProjects}>Projects</Dropdown.Item>
             <Dropdown.Item onClick={toTasks}>Assigned Tasks</Dropdown.Item>
             <Dropdown.Divider />
-            <Dropdown.Item onClick={handleSignOut}>Sign out</Dropdown.Item>
+            <Dropdown.Item onClick={handleLogOut}>Sign out</Dropdown.Item>
           </Dropdown>
         )}
       </div>

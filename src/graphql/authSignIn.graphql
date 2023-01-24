@@ -1,5 +1,0 @@
-mutation AuthSignIn($email: String!, $password: String!) {
-  authSignIn(email: $email, password: $password) {
-    ...CurrentUserFragment
-  }
-}

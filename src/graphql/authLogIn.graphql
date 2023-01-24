@@ -1,0 +1,5 @@
+mutation AuthLogIn($email: String!, $password: String!) {
+  authLogIn(email: $email, password: $password) {
+    ...CurrentUserFragment
+  }
+}

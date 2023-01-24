@@ -1,5 +1,0 @@
-mutation AuthSignOut {
-  authSignOut {
-    status
-  }
-}

@@ -1,7 +1,7 @@
 import { Navigate, useRoutes } from 'react-router-dom';
 
 import Projects from '../pages/Projects';
-import SignIn from '../pages/SignIn';
+import LogIn from '../pages/LogIn';
 import NotFound from '../pages/NotFound';
 import Loading from '../pages/Loading';
 import Project from '../pages/Project';
@@ -31,19 +31,19 @@ function RouterProvider() {
   const routes = useRoutes([
     {
       path: '/',
-      element: !!currentUser ? <Projects /> : <Navigate to="/signin" />,
+      element: !!currentUser ? <Projects /> : <Navigate to="/logIn" />,
     },
     {
       path: '/tasks',
-      element: !!currentUser ? <AssignedTasks /> : <Navigate to="/signin" />,
+      element: !!currentUser ? <AssignedTasks /> : <Navigate to="/logIn" />,
     },
     {
       path: '/project/:id',
-      element: !!currentUser ? <Project /> : <Navigate to="/signin" />,
+      element: !!currentUser ? <Project /> : <Navigate to="/logIn" />,
     },
     {
-      path: '/signin',
-      element: !currentUser ? <SignIn /> : <Navigate to="/" />,
+      path: '/logIn',
+      element: !currentUser ? <LogIn /> : <Navigate to="/" />,
     },
     { path: '*', element: <NotFound /> },
   ]);
